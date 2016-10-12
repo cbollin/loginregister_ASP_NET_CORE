@@ -1,0 +1,32 @@
+
+<html>
+<head>
+	<title>Login Registration</title>
+	<!--<link rel="stylesheet" href="~css/site.css"/>-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" >
+</head>
+<body>
+    <h2>Welcome to Login Registration</h2>
+    <form action='/register' method='post'>
+        <p>First Name: <input type="text" name="first_name"></p>
+       <p>Last Name: <input type="text" name="last_name"></p>
+       <p>Email: <input type="text" name="email"></p>
+       <p>Password: <input type="password" name="password"></p>
+       <p><input type="submit" value="Register"></p>
+    </form>
+    <form action='/login' method='post'>
+       <p>Email: <input type="text" name="email"></p>
+       <p>Password: <input type="password" name="password"></p>
+       <p><input type="submit" value="Login"></p>
+    </form>
+
+    <a href='/users'><button>Skip to Users</button></a>
+    @{
+            if(ViewBag.errors != null){
+                foreach(var error in ViewBag.errors){
+                    <p>@error</p>
+                }
+            }
+        } 
+</body>
+</html>

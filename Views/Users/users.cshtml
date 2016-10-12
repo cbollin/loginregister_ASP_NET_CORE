@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Users</title>
+	<!--<link rel="stylesheet" href="~css/site.css"/>-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" >
+</head>
+<body>
+	<h2>Users</h2>
+    @{
+        foreach(var Current in ViewBag.users){
+            <p>@Current.first_name</p>
+            <p>@Current.last_name</p>
+            <p>@Current.email</p>
+            <p>@Current.created_at</p>
+        <hr>
+        }
+    }
+    <a href='/'><button class="button-primary">Add A User</button></a>
+</body>
+</html>
